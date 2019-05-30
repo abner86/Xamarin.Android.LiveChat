@@ -1,2 +1,2 @@
 # Xamarin.Android.LiveChat
-LiveChatInc widget using Xamairn
+LiveChatInc widget using C# and Xamarin Android
