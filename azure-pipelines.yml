@@ -7,10 +7,13 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macos-latest'
+  name: Hosted Windows 2019 with VS2019
+  demands:
+  - msbuild
+  - visualstudio
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: 'Release'  
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
