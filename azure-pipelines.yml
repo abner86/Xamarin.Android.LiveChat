@@ -12,7 +12,7 @@ pool:
   - msbuild
   - visualstudio
   
-name: '$(BuildDefinitionName) $(MajorVersion).$(MinorVersion).$(DayOfYear)$(Rev:.r)'
+name: '$(BuildDefinitionName) $(MajorVersion).$(MinorVersion)$(Rev:.r)'
 
 variables:
   buildConfiguration: 'Release'  
