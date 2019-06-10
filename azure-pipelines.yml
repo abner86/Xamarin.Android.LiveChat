@@ -51,10 +51,11 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
   inputs:
-    SourceFolder: './'
+    SourceFolder: '$/Xamarin.Android.LiveChat.Android'
     Contents: |
      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: Nuget-Package'
