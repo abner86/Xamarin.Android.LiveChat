@@ -36,7 +36,7 @@ steps:
   inputs:
     projectFile: '**/*droid*.csproj'
     outputDirectory: '$(outputDirectory)'
-    configuration: '$(buildConfiguration)'
+    configuration: '$(buildConfiguration)'  
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
@@ -51,7 +51,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
   inputs:
-    SourceFolder: '$/Xamarin.Android.LiveChat.Android'
+    SourceFolder: '$(outputDirectory)'
     Contents: |
      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
