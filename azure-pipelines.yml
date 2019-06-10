@@ -19,7 +19,7 @@ variables:
   semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
   outputDirectory: '$(Build.ArtifactStagingDirectory)/package'
 
-name: '$(majorMinorVersion).$(semanticVersion) # $(Rev:.r)'
+name: $(majorMinorVersion).$(semanticVersion)
 
 steps:
 - task: NuGetToolInstaller@0
