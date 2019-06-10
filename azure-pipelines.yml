@@ -46,7 +46,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
   inputs:
-    SourceFolder: '$/Xamarin.Android.LiveChat'
+    SourceFolder: '/Xamarin.Android.LiveChat'
     Contents: |
      Xamarin.Android.LiveChat.nuspec
      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
@@ -55,7 +55,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    SourceFolder: '$/Xamarin.Android.LiveChat'
+    SourceFolder: '/Xamarin.Android.LiveChat'
     Contents: |
      Set-PackageQuality.ps1
      ApplyVersionToAssemblies.ps1
