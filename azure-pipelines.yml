@@ -6,6 +6,8 @@
 trigger:
 - master
 
+name: $(majorMinorVersion).$(semanticVersion)
+
 pool:
   name: Hosted Windows 2019 with VS2019
   demands:
@@ -15,11 +17,9 @@ pool:
 variables:
   buildConfiguration: 'Release'  
   BuildPlatform: 'any cpu'
-  MajorMinorVersion: '1.0'
+  majorMinorVersion: '1.0'
   semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
   outputDirectory: '$(Build.ArtifactStagingDirectory)/package'
-
-name: $(majorMinorVersion).$(semanticVersion)
 
 steps:
 - task: NuGetToolInstaller@0
