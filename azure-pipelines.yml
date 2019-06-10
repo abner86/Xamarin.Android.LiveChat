@@ -19,7 +19,7 @@ variables:
   BuildPlatform: 'any cpu'
   MajorVersion: '1'
   MinorVersion: '0'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  outputDirectory: '$(Build.ArtifactStagingDirectory)/package'
 
 steps:
 - task: NuGetToolInstaller@0
@@ -43,7 +43,6 @@ steps:
   inputs:
     SourceFolder: './'
     Contents: |
-     Xamarin.Android.LiveChat.nuspec
      Set-PackageQuality.ps1
      ApplyVersionToAssemblies.ps1
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -51,11 +50,9 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
   inputs:
-    SourceFolder: '$(outputDirectory)'
-    Contents: |
-     Release/Xamarin.Android.LiveChat.*
+    SourceFolder: './'
+    Contents: Xamarin.Android.LiveChat.nuspec
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
-
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: Nuget-Package'
