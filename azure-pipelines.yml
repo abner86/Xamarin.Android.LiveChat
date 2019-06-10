@@ -53,7 +53,7 @@ steps:
   inputs:
     SourceFolder: '$(outputDirectory)'
     Contents: |
-     Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
+     Release/Xamarin.Android.LiveChat.*
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
 
 
