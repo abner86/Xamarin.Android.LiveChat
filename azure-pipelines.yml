@@ -46,8 +46,22 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
   inputs:
-    SourceFolder: '$/LiveChatLibrary.Android'
+    SourceFolder: '$/Xamarin.Android.LiveChat'
     Contents: |
      Xamarin.Android.LiveChat.nuspec
      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: '$/Xamarin.Android.LiveChat'
+    Contents: |
+     Set-PackageQuality.ps1
+     ApplyVersionToAssemblies.ps1
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Nuget-Package'
+  inputs:
+    ArtifactName: 'Nuget-Package'
