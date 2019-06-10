@@ -43,6 +43,7 @@ steps:
   inputs:
     SourceFolder: './'
     Contents: |
+     Xamarin.Android.LiveChat.nuspec
      Set-PackageQuality.ps1
      ApplyVersionToAssemblies.ps1
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -52,7 +53,6 @@ steps:
   inputs:
     SourceFolder: './'
     Contents: |
-     Xamarin.Android.LiveChat.nuspec
      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
 
