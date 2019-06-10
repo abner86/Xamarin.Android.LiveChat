@@ -6,6 +6,8 @@
 trigger:
 - master
 
+name: '$(BuildDefinitionName) $(MajorVersion).$(MinorVersion).$(DayOfYear)$(Rev:.r)'
+
 pool:
   name: Hosted Windows 2019 with VS2019
   demands:
@@ -15,6 +17,8 @@ pool:
 variables:
   buildConfiguration: 'Release'  
   BuildPlatform: 'any cpu'
+  MajorVersion: '1'
+  MinorVersion: '0'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
@@ -26,7 +30,7 @@ steps:
 
 - task: PowerShell@2
   inputs:
-    filePath: './$/ApplyVersionToAssemblies.ps1'
+    filePath: './ApplyVersionToAssemblies.ps1'
 
 - task: XamarinAndroid@1
   inputs:
