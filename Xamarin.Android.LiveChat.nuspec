@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\package\Xamarin.Android.LiveChat\bin\Release\Xamarin.Android.LiveChat.*" target="lib\MonoAndroid80" />
+    <file src="..\package\Xamarin.Android.LiveChat.*" target="lib\MonoAndroid80" />
   </files>
 </package>
