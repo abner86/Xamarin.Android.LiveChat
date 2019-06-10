@@ -37,3 +37,17 @@ steps:
     projectFile: '**/*droid*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishSymbols@2
+  inputs:
+    SearchPattern: '**/bin/**/*.pdb'
+    SymbolServerType: 'TeamServices'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
+  inputs:
+    SourceFolder: '$/LiveChatLibrary.Android'
+    Contents: |
+     Xamarin.Android.LiveChat.nuspec
+     Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
