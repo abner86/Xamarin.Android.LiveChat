@@ -11,7 +11,7 @@ pool:
   demands:
   - msbuild
   - visualstudio
-  
+
 name: '$(BuildDefinitionName) $(MajorVersion).$(MinorVersion)$(Rev:.r)'
 
 variables:
