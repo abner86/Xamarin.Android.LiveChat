@@ -28,9 +28,9 @@ steps:
   inputs:
     restoreSolution: '**/*.sln'
 
-- task: PowerShell@2
-  inputs:
-    filePath: './ApplyVersionToAssemblies.ps1'
+# - task: PowerShell@2
+#   inputs:
+#     filePath: './ApplyVersionToAssemblies.ps1'
 
 - task: XamarinAndroid@1
   inputs:
