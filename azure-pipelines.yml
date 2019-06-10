@@ -26,7 +26,7 @@ steps:
 
 - task: PowerShell@2
   inputs:
-    filePath: './Xamarin.Android.LiveChat/ApplyVersionToAssemblies.ps1'
+    filePath: './$/ApplyVersionToAssemblies.ps1'
 
 - task: XamarinAndroid@1
   inputs:
