@@ -8,6 +8,7 @@
     <owners>Abner Benavides</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://github.com/abner86/Xamarin.Android.LiveChat</projectUrl>
+    <iconUrl>https://github.com/abner86/Xamarin.Android.LiveChat/blob/master/live-chat-icon.png</iconUrl>
     <description>Livechatinc android widget integration using Xamarin</description>
     <releaseNotes>See Changelog: https://github.com/abner86/Xamarin.Android.LiveChat/commits/master</releaseNotes>
     <copyright>Copyright 2018 (c) Abner Benavides. All Rights Reserved.</copyright>
