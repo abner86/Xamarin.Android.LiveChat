@@ -6,19 +6,19 @@
 trigger:
 - master
 
+name: '$(majorMinorVersion).$(semanticVersion) # $(Rev:.r)'
+
 pool:
   name: Hosted Windows 2019 with VS2019
   demands:
   - msbuild
   - visualstudio
 
-name: '$(BuildDefinitionName) $(MajorVersion).$(MinorVersion).$(Rev:.r)'
-
 variables:
   buildConfiguration: 'Release'  
   BuildPlatform: 'any cpu'
-  MajorVersion: '1'
-  MinorVersion: '0'
+  MajorMinorVersion: '1.0'
+  semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
   outputDirectory: '$(Build.ArtifactStagingDirectory)/package'
 
 steps:
