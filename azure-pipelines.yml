@@ -38,21 +38,6 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishSymbols@2
-  inputs:
-    SearchPattern: '**/bin/**/*.pdb'
-    SymbolServerType: 'TeamServices'
-
-
-# - task: CopyFiles@2
-#   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
-#   inputs:
-#     SourceFolder: './'
-#     Contents: |
-#      Xamarin.Android.LiveChat.nuspec
-#      Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
-#     TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
-
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
@@ -62,7 +47,16 @@ steps:
      ApplyVersionToAssemblies.ps1
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-# - task: PublishBuildArtifacts@1
-#   displayName: 'Publish Artifact: Nuget-Package'
-#   inputs:
-#     ArtifactName: 'Nuget-Package'
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/package'
+  inputs:
+    SourceFolder: './'
+    Contents: |
+     Xamarin.Android.LiveChat.nuspec
+     Xamarin.Android.LiveChat.Android/bin/Release/Xamarin.Android.LiveChat.*
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Nuget-Package'
+  inputs:
+    ArtifactName: 'Nuget-Package'
