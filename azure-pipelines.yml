@@ -6,7 +6,7 @@
 trigger:
 - master
 
-name: $(BuildDefinitionName) $(MajorVersion).$(MinorVersion).$(DayOfYear)$(Rev:.r)
+name: $(MajorVersion).$(MinorVersion).$(DayOfYear)$(Rev:.r)
 
 pool:
   name: Hosted Windows 2019 with VS2019
